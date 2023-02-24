@@ -4,11 +4,153 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
+    <title>Weather Forecast</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/03ba0456cd.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Mono&family=Pacifico&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Weather App with SheCodes</h1>
-    <script src="index.js"></script>
+    <div class="container">
+      <div class="card">
+        <div class="row">
+          <div class="col-12">
+            <h1>
+              <i class="fa-solid fa-rainbow"></i>
+              Weather Forecast
+            </h1>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+              id="search-input"
+            />
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              id="search-btn"
+            >
+              Search
+            </button>
+            <button
+              class="btn btn-outline-success"
+              type="submit"
+              id="current-btn"
+            >
+              Current
+            </button>
+          </form>
+        </div>
+        <br />
+        <div class="row">
+          <div class="col-6 city-temp">
+            <span id="temp-text">15</span>
+            <span class="units"
+              ><a href="#" id="celi">°C</a>| <a href="#" id="faren">°F</a></span
+            ><br />
+
+            <div id="city-name" class="city-name">Tehran</div>
+            <h3 id="times-today"></h3>
+          </div>
+
+          <div class="col-6">
+            <p class="weather-now-icon">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              Description: <small id="weather-dis"></small>
+            </div>
+            <div class="col-4">
+              <small>Humidity: </small><small id="humidity"></small>
+            </div>
+            <div class="col-4">
+              <small>Wind: </small><small id="wind"></small>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="row shadow-sm p-3 mb-2 bg-body-tertiary rounded next-row">
+          <h2>Next 5 hours:</h2>
+          <div class="col">
+            <p>12°C <i class="fa-solid fa-sun"></i></p>
+          </div>
+          <div class="col">
+            <p>10°C <i class="fa-solid fa-sun"></i></p>
+          </div>
+          <div class="col">
+            <p>9°C <i class="fa-solid fa-cloud"></i></p>
+          </div>
+          <div class="col">
+            <p>9°C <i class="fa-solid fa-wind"></i></p>
+          </div>
+          <div class="col">
+            <p>14°C <i class="fa-solid fa-cloud-showers-heavy"></i></p>
+          </div>
+        </div>
+        <div class="row shadow-sm p-3 bg-body-tertiary rounded next-row">
+          <h2>Next 5 day:</h2>
+          <div class="col">
+            <p>
+              today:<br />
+              12°C <i class="fa-solid fa-sun"></i>
+            </p>
+          </div>
+          <div class="col">
+            <p>Sun<br />10°C <i class="fa-solid fa-sun"></i></p>
+          </div>
+          <div class="col">
+            <p>Mon<br />9°C <i class="fa-solid fa-cloud"></i></p>
+          </div>
+          <div class="col">
+            <p>Tue<br />9°C <i class="fa-solid fa-wind"></i></p>
+          </div>
+          <div class="col">
+            <p>Wen<br />14°C <i class="fa-solid fa-cloud-showers-heavy"></i></p>
+          </div>
+        </div>
+        <span>
+          <a href="https://github.com/shahrzadblackfox/project-weather"
+            >pen-source code </a
+          >by Shahrzad
+        </span>
+      </div>
+    </div>
   </body>
+  <script src="index.js" type="text/javascript"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
 </html>
