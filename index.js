@@ -1,4 +1,4 @@
-function reveal() {
+/*function reveal() {
   var reveals = document.querySelectorAll(".reveal");
 
   for (var i = 0; i < reveals.length; i++) {
@@ -14,4 +14,4 @@ function reveal() {
   }
 }
 
-window.addEventListener("scroll", reveal);
+window.addEventListener("scroll", reveal);*/
