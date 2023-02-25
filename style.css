@@ -32,10 +32,11 @@ p {
 }
 .units {
   position: relative;
+  font-size: 20px;
 }
 
 .city-temp {
-  font-size: 38px;
+  font-size: 58px;
   font-weight: 400;
   line-height: 1;
   padding: 0;
