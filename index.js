@@ -1,9 +1,9 @@
 function showTempToday(response) {
-  let cityName = response.data.name;
-  let currentTemp = Math.round(response.data.main.temp);
+  let cityName = response.data.city;
+  let currentTemp = Math.round(response.data.temperature.current);
   let wind = response.data.wind.speed;
-  let humidity = response.data.main.humidity;
-  let dis = response.data.weather[0].description;
+  let humidity = response.data.temperature.humidity;
+  let dis = response.data.condition.description;
   let cityText = document.querySelector("#city-name");
   let tempText = document.querySelector("#temp-text");
   let weatherDis = document.querySelector("#weather-dis");
@@ -16,12 +16,12 @@ function showTempToday(response) {
   hum.innerHTML = humidity;
 }
 
-let apiKey = "2dd4a9a3477a790a05f1be4bfcb55931";
+let apiKey = "4b44333bbcda5f0o6aaf4bt96ce9c0cd";
 
-function currentPosition(position) {
-  let lat = position.coords.latitude;
-  let long = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
+function currentPosition(possition) {
+  let long = possition.data.coordinates.longitude;
+  let lat = possition.data.coordinates.latitude;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTempToday);
 }
 function nav(event) {
@@ -56,7 +56,7 @@ function changeCity(event) {
   event.preventDefault();
   let inputOfSearch = document.querySelector("#search-input");
   let valueSearch = inputOfSearch.value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${valueSearch}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${valueSearch}&key=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showTempToday);
 }
