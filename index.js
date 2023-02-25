@@ -18,9 +18,9 @@ function showTempToday(response) {
 
 let apiKey = "4b44333bbcda5f0o6aaf4bt96ce9c0cd";
 
-function currentPosition(possition) {
-  let long = possition.data.coordinates.longitude;
-  let lat = possition.data.coordinates.latitude;
+function currentPosition(position) {
+  let long = position.coords.longitude;
+  let lat = position.coords.latitude;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${long}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTempToday);
 }
