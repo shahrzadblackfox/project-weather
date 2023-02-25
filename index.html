@@ -62,7 +62,7 @@
               Search
             </button>
             <button
-              class="btn btn-outline-success"
+              class="btn btn-outline-success current-button"
               type="submit"
               id="current-btn"
             >
@@ -72,22 +72,24 @@
         </div>
         <br />
         <div class="row">
-          <div class="col-6 city-temp">
+          <div class="col-4 city-temp" style="padding-top: 30px">
             <span id="temp-text">15</span>
             <span class="units"
               ><a href="#" id="celi">°C</a>| <a href="#" id="faren">°F</a></span
-            ><br />
+            >
+          </div>
 
+          <div class="col-4">
             <div id="city-name" class="city-name">Tehran</div>
             <h3 id="times-today"></h3>
           </div>
 
-          <div class="col-6">
+          <div class="col-4">
             <p class="weather-now-icon">
               <i class="fa-solid fa-cloud-sun"></i>
             </p>
           </div>
-          <div class="row">
+          <div class="row dis-weather">
             <div class="col-4">
               Description: <small id="weather-dis"></small>
             </div>
@@ -141,7 +143,7 @@
         </div>
         <span>
           <a href="https://github.com/shahrzadblackfox/project-weather"
-            >pen-source code </a
+            >Open-source code </a
           >by Shahrzad
         </span>
       </div>
