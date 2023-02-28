@@ -30,7 +30,6 @@ function showTempToday(response) {
   //adding icons
   let iconElement = document.querySelector("#weather-now");
   let iconNowTemp = response.data.condition.icon;
-  console.log(iconNowTemp);
   iconElement.setAttribute(
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconNowTemp}.png`
