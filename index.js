@@ -1,19 +1,39 @@
 function showTempToday(response) {
+  //geting the city data
+  //the city name from the data
   let cityName = response.data.city;
+  //temp
   let currentTemp = Math.round(response.data.temperature.current);
+  //wind
   let wind = response.data.wind.speed;
+  //humidity
   let humidity = response.data.temperature.humidity;
+  //description
   let dis = response.data.condition.description;
+
+  // geting the id of each element
   let cityText = document.querySelector("#city-name");
   let tempText = document.querySelector("#temp-text");
   let weatherDis = document.querySelector("#weather-dis");
   let hum = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
+
+  //changing the inside of the id
   cityText.innerHTML = cityName;
   tempText.innerHTML = currentTemp;
   windSpeed.innerHTML = wind;
   weatherDis.innerHTML = dis;
   hum.innerHTML = humidity;
+
+  //adding icons
+  let iconElement = document.querySelector("#weather-now");
+  let iconNowTemp = response.data.condition.icon;
+  console.log(iconNowTemp);
+  iconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconNowTemp}.png`
+  );
+  iconElement.setAttribute("alt", `${iconNowTemp}`);
 }
 
 let apiKey = "4b44333bbcda5f0o6aaf4bt96ce9c0cd";
@@ -62,13 +82,3 @@ function changeCity(event) {
 }
 let button = document.querySelector("#search-btn");
 button.addEventListener("click", changeCity);
-
-////farnenhite change
-/*function showFaren(event) {
-  event.preventDefault();
-  let celi = document.querySelector("#temp-text");
-  let farn = (celi.innerHTML * 9) / 5 + 32;
-  celi.innerHTML = farn;
-}
-let linkF = document.querySelector("#faren");
-linkF.addEventListener("click", showFaren);*/
