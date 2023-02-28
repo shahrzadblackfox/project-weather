@@ -63,7 +63,13 @@ function todayTime(todayTimeInput) {
   let todayIs = days[day];
 
   let hours = dateNew.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
   let min = dateNew.getMinutes();
+  if (min < 10) {
+    min = `0${min}`;
+  }
 
   let fordate = ` ${todayIs}, ${hours}:${min}`;
   return fordate;
