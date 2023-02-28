@@ -72,6 +72,34 @@ function todayTime(todayTimeInput) {
 let h3 = document.querySelector("#times-today");
 h3.innerHTML = todayTime(new Date());
 
+//changing units
+function changeToFaren(event) {
+  event.preventDefault();
+  let celElement = document.querySelector("#temp-text");
+  ///remove active class from celsius link
+  aCelsius.classList.remove("active");
+  aFaren.classList.add("active");
+  let farenFormula = (celsiusTemp * 9) / 5 + 32;
+
+  celElement.innerHTML = Math.round(farenFormula);
+}
+
+function changeToCelsius(event) {
+  event.preventDefault();
+  aCelsius.classList.add("active");
+  aFaren.classList.remove("active");
+  let tempElement = document.querySelector("#temp-text");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let aFaren = document.querySelector("#faren");
+aFaren.addEventListener("click", changeToFaren);
+
+let aCelsius = document.querySelector("#celi");
+aCelsius.addEventListener("click", changeToCelsius);
+
 ////city search
 
 function changeCity(event) {
@@ -84,16 +112,3 @@ function changeCity(event) {
 }
 let button = document.querySelector("#search-btn");
 button.addEventListener("click", changeCity);
-
-//changing units
-function changeToFaren(event) {
-  event.preventDefault();
-  let farenFormula = (celsiusTemp * 9) / 5 + 32;
-  let celElement = document.querySelector("#temp-text");
-  celElement.innerHTML = Math.round(farenFormula);
-}
-
-let celsiusTemp = null;
-
-let aFaren = document.querySelector("#faren");
-aFaren.addEventListener("click", changeToFaren);
