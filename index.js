@@ -18,6 +18,8 @@ function showTempToday(response) {
   let hum = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
 
+  celsiusTemp = response.data.temperature.current;
+
   //changing the inside of the id
   cityText.innerHTML = cityName;
   tempText.innerHTML = currentTemp;
@@ -82,3 +84,16 @@ function changeCity(event) {
 }
 let button = document.querySelector("#search-btn");
 button.addEventListener("click", changeCity);
+
+//changing units
+function changeToFaren(event) {
+  event.preventDefault();
+  let farenFormula = (celsiusTemp * 9) / 5 + 32;
+  let celElement = document.querySelector("#temp-text");
+  celElement.innerHTML = Math.round(farenFormula);
+}
+
+let celsiusTemp = null;
+
+let aFaren = document.querySelector("#faren");
+aFaren.addEventListener("click", changeToFaren);
