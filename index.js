@@ -32,7 +32,7 @@ function showTempToday(response) {
   let iconNowTemp = response.data.condition.icon;
   iconElement.setAttribute(
     "src",
-    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconNowTemp}.png`
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${iconNowTemp}.png`
   );
   iconElement.setAttribute("alt", `${iconNowTemp}`);
 }
