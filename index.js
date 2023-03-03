@@ -12,7 +12,6 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-  console.log(forecast);
 
   let forecastElement = document.querySelector("#next-day-forcast");
   let forecastHtml = "";
@@ -49,7 +48,7 @@ function displayForecast(response) {
 
 function getForecast(coords) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coords.longitude}&lat=${coords.latitude}&key=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -133,18 +132,6 @@ function todayTime(todayTimeInput) {
 let h3 = document.querySelector("#times-today");
 h3.innerHTML = todayTime(new Date());
 
-//changing units
-function changeToFaren(event) {
-  event.preventDefault();
-  let celElement = document.querySelector("#temp-text");
-  ///remove active class from celsius link
-  aCelsius.classList.remove("active");
-  aFaren.classList.add("active");
-  let farenFormula = (celsiusTemp * 9) / 5 + 32;
-
-  celElement.innerHTML = Math.round(farenFormula);
-}
-
 function changeToCelsius(event) {
   event.preventDefault();
   aCelsius.classList.add("active");
@@ -152,14 +139,6 @@ function changeToCelsius(event) {
   let tempElement = document.querySelector("#temp-text");
   tempElement.innerHTML = Math.round(celsiusTemp);
 }
-
-let celsiusTemp = null;
-
-let aFaren = document.querySelector("#faren");
-aFaren.addEventListener("click", changeToFaren);
-
-let aCelsius = document.querySelector("#celi");
-aCelsius.addEventListener("click", changeToCelsius);
 
 ////city search
 
