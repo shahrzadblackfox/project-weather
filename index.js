@@ -27,7 +27,7 @@ function displayForecast(response) {
             <img
                 alt=""
                 id="weather-now"
-                src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
                   forecastDay.condition.icon
                 }.png"
               />
