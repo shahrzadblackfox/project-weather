@@ -48,7 +48,6 @@ function displayForecast(response) {
 
 function getForecast(coords) {
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coords.longitude}&lat=${coords.latitude}&key=${apiKey}&units=metric`;
-
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -152,3 +151,8 @@ function changeCity(event) {
 }
 let button = document.querySelector("#search-btn");
 button.addEventListener("click", changeCity);
+
+window.onload = (event) => {
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=lisbon&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTempToday);
+};
