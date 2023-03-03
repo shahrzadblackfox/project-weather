@@ -18,6 +18,7 @@ p {
   padding: 20px;
   margin-top: 20px;
   max-width: 80%;
+  max-height: 50%;
   background-color: #d6e4e5 !important;
 }
 .row {
@@ -49,7 +50,8 @@ p {
 }
 
 .dis-weather {
-  font-size: 24px;
+  font-size: 20px;
+  font-family: "Pacifico", cursive;
 }
 
 .code-by {
@@ -65,4 +67,8 @@ p {
 }
 .active:hover {
   text-decoration: none;
+}
+
+.wather-forcast-date {
+  font-family: "Pacifico", cursive;
 }
